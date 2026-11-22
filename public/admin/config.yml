@@ -1,0 +1,929 @@
+# Decap CMS configuration — edit content at /admin
+# 1) Set backend.repo to your GitHub repo  2) See README for the GitHub login setup
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+  branch: main
+  auth_endpoint: api/auth
+  commit_messages:
+    update: 'content: update {{collection}} “{{slug}}”'
+    create: 'content: create {{collection}} “{{slug}}”'
+    delete: 'content: delete {{collection}} “{{slug}}”'
+    uploadMedia: 'media: upload “{{path}}”'
+    deleteMedia: 'media: delete “{{path}}”'
+local_backend: true
+publish_mode: simple
+media_folder: public/uploads
+public_folder: /uploads
+slug:
+  encoding: ascii
+  clean_accents: true
+collections:
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: content/pages
+    format: json
+    extension: json
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    identifier_field: title
+    editor:
+      preview: false
+    description: “home” is the homepage. New pages appear at /page-name/. Add, reorder (drag) or hide sections inside each page.
+    fields:
+      - label: Page title
+        name: title
+        widget: string
+      - label: SEO title
+        name: seoTitle
+        widget: string
+        required: false
+      - label: SEO description
+        name: seoDescription
+        widget: text
+        required: false
+      - label: Sections
+        name: sections
+        widget: list
+        typeKey: type
+        types:
+          - label: ★ Hero (intro with portrait)
+            name: hero
+            widget: object
+            summary: '{{fields.firstName}} {{fields.lastName}}'
+            fields:
+              - &id001
+                label: Anchor ID
+                name: anchor
+                widget: string
+                required: false
+                hint: Used for menu links, e.g. 'about' → link to /#about. Lowercase, no spaces.
+              - &id002
+                label: Hide this section
+                name: hidden
+                widget: boolean
+                required: false
+                default: false
+                hint: Turn on to hide without deleting.
+              - label: First name (big)
+                name: firstName
+                widget: string
+              - label: Last name (big)
+                name: lastName
+                widget: string
+              - label: Black tag line
+                name: tag
+                widget: string
+                required: false
+              - label: Intro paragraph
+                name: lead
+                widget: text
+                required: false
+              - label: Badges / chips
+                name: chips
+                widget: list
+                required: false
+                field:
+                  label: Item
+                  name: item
+                  widget: string
+              - label: Small location line
+                name: location
+                widget: string
+                required: false
+              - label: Portrait image
+                name: portrait
+                widget: image
+                required: false
+                choose_url: true
+                hint: 'Best: PNG/WebP with transparent background, ~900px wide'
+              - label: Portrait description (accessibility)
+                name: portraitAlt
+                widget: string
+                required: false
+              - label: Background ink texture
+                name: splash
+                widget: image
+                required: false
+                choose_url: true
+              - label: Black & white portrait with colour reveal on hover
+                name: colorReveal
+                widget: boolean
+                required: false
+                default: true
+              - label: Reveal hint label
+                name: revealHint
+                widget: string
+                required: false
+              - label: Vertical 'explore' label
+                name: exploreLabel
+                widget: string
+                required: false
+              - label: Explore link
+                name: exploreHref
+                widget: string
+                required: false
+                hint: 'e.g. #about'
+          - label: Marquee (scrolling text bands)
+            name: marquee
+            widget: object
+            summary: Marquee
+            fields:
+              - *id001
+              - *id002
+              - label: Main band words
+                name: items
+                widget: list
+                required: false
+                field:
+                  label: Item
+                  name: item
+                  widget: string
+              - label: Back band words (outlined)
+                name: secondary
+                widget: list
+                required: false
+                field:
+                  label: Item
+                  name: item
+                  widget: string
+          - label: About (title + statement + columns)
+            name: about
+            widget: object
+            summary: '{{fields.titleTop}} {{fields.titleOutline}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Title (solid part)
+                name: titleTop
+                widget: string
+                required: false
+              - label: Title (outlined part)
+                name: titleOutline
+                widget: string
+                required: false
+              - label: Small line under title
+                name: subline
+                widget: string
+                required: false
+              - label: Statement (grey line)
+                name: statementLead
+                widget: string
+                required: false
+              - label: Statement (white highlight)
+                name: statementHighlight
+                widget: string
+                required: false
+              - label: Numbered columns
+                name: columns
+                widget: list
+                required: false
+                fields:
+                  - label: Number
+                    name: number
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Tag after //
+                    name: tag
+                    widget: string
+                    required: false
+                  - label: Text
+                    name: body
+                    widget: text
+                    required: false
+                    hint: Wrap words in **double asterisks** to make them bold & italic.
+                summary: '{{fields.number}}. {{fields.title}}'
+              - label: Status bar text
+                name: status
+                widget: string
+                required: false
+          - label: Cards grid (journey / projects)
+            name: cards
+            widget: object
+            summary: '{{fields.titleTop}} {{fields.titleOutline}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Title (solid part)
+                name: titleTop
+                widget: string
+                required: false
+              - label: Title (outlined part)
+                name: titleOutline
+                widget: string
+                required: false
+              - label: Cards
+                name: items
+                widget: list
+                required: false
+                fields:
+                  - label: Card title
+                    name: name
+                    widget: string
+                  - label: Duration (small)
+                    name: duration
+                    widget: string
+                    required: false
+                  - label: Cover top-left label
+                    name: meta
+                    widget: string
+                    required: false
+                  - label: Cover top-right badge
+                    name: badge
+                    widget: string
+                    required: false
+                  - label: Show live red dot
+                    name: live
+                    widget: boolean
+                    required: false
+                    default: false
+                  - label: 'Cover: from (outlined)'
+                    name: from
+                    widget: string
+                    required: false
+                  - label: 'Cover: to (solid)'
+                    name: to
+                    widget: string
+                    required: false
+                  - label: 'Cover: role line'
+                    name: role
+                    widget: string
+                    required: false
+                  - label: Cover image (replaces the typographic cover)
+                    name: image
+                    widget: image
+                    required: false
+                    choose_url: true
+                  - label: Card link (URL)
+                    name: link
+                    widget: string
+                    required: false
+                  - label: Description
+                    name: description
+                    widget: text
+                    required: false
+                  - label: Tags
+                    name: tags
+                    widget: list
+                    required: false
+                    field:
+                      label: Item
+                      name: item
+                      widget: string
+                summary: '{{fields.name}} ({{fields.from}}–{{fields.to}})'
+              - label: Footnote label
+                name: footnote
+                widget: string
+                required: false
+          - label: Tabs + tiles (toolkit / skills)
+            name: tabs
+            widget: object
+            summary: '{{fields.titleTop}} {{fields.titleOutline}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Title (solid part)
+                name: titleTop
+                widget: string
+                required: false
+              - label: Title (outlined part)
+                name: titleOutline
+                widget: string
+                required: false
+              - label: Tabs
+                name: tabs
+                widget: list
+                required: false
+                fields:
+                  - label: Tab name
+                    name: label
+                    widget: string
+                  - label: Small label above tab name
+                    name: sub
+                    widget: string
+                    required: false
+                  - label: Boxed label
+                    name: registry
+                    widget: string
+                    required: false
+                  - label: Big heading
+                    name: heading
+                    widget: text
+                    required: false
+                  - label: Small note
+                    name: note
+                    widget: text
+                    required: false
+                    hint: Wrap words in **double asterisks** to make them bold & italic.
+                  - label: Tiles
+                    name: tiles
+                    widget: list
+                    required: false
+                    fields:
+                      - label: Label
+                        name: label
+                        widget: string
+                      - label: Icon
+                        name: icon
+                        widget: select
+                        required: false
+                        options: &id003
+                          - linkedin
+                          - mail
+                          - ext
+                          - arrow
+                          - download
+                          - terminal
+                          - file
+                          - bolt
+                          - cap
+                          - award
+                          - calendar
+                          - book
+                          - grid
+                          - target
+                          - users
+                          - layers
+                          - monitor
+                          - message
+                          - compass
+                          - sprout
+                          - heart
+                          - home
+                          - link
+                          - clipboard
+                          - pen
+                          - eye
+                          - shield
+                          - chart
+                          - refresh
+                          - bulb
+                          - star
+                          - globe
+                          - music
+                          - palette
+                          - mic
+                        hint: Line icon shown on the tile/card
+                    summary: '{{fields.label}}'
+                summary: '{{fields.label}}'
+              - label: Faint signature text
+                name: signature
+                widget: string
+                required: false
+          - label: Featured highlight (award / milestone)
+            name: feature
+            widget: object
+            summary: '{{fields.title}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Section label
+                name: label
+                widget: string
+                required: false
+              - label: Red tag
+                name: tag
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+                required: false
+              - label: Link label
+                name: ctaLabel
+                widget: string
+                required: false
+              - label: Link URL (e.g. Credly badge)
+                name: ctaUrl
+                widget: string
+                required: false
+              - label: Animated numbers
+                name: stats
+                widget: list
+                required: false
+                fields:
+                  - label: Label
+                    name: label
+                    widget: string
+                  - label: Number
+                    name: value
+                    widget: number
+                    value_type: int
+                  - label: Suffix (e.g. +)
+                    name: suffix
+                    widget: string
+                    required: false
+                  - label: Icon
+                    name: icon
+                    widget: select
+                    required: false
+                    options: *id003
+                    hint: Line icon shown on the tile/card
+                summary: '{{fields.value}}{{fields.suffix}} {{fields.label}}'
+          - label: Ledger list (certifications / education)
+            name: ledger
+            widget: object
+            summary: '{{fields.titleTop}} {{fields.titleOutline}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Section label
+                name: label
+                widget: string
+                required: false
+              - label: Title (solid part)
+                name: titleTop
+                widget: string
+                required: false
+              - label: Title (outlined part)
+                name: titleOutline
+                widget: string
+                required: false
+              - label: Groups
+                name: groups
+                widget: list
+                required: false
+                fields:
+                  - label: Group label
+                    name: label
+                    widget: string
+                    required: false
+                  - label: Rows
+                    name: rows
+                    widget: list
+                    required: false
+                    fields:
+                      - label: Code (e.g. LOG_01)
+                        name: code
+                        widget: string
+                        required: false
+                      - label: Title
+                        name: title
+                        widget: string
+                      - label: Details line
+                        name: meta
+                        widget: string
+                        required: false
+                      - label: Status badge
+                        name: status
+                        widget: string
+                        required: false
+                      - label: Badge style
+                        name: style
+                        widget: select
+                        required: false
+                        options:
+                          - label: Default
+                            value: default
+                          - label: Highlighted (maroon)
+                            value: live
+                          - label: In progress (dashed)
+                            value: progress
+                        default: default
+                      - label: Link
+                        name: url
+                        widget: string
+                        required: false
+                    summary: '{{fields.code}} — {{fields.title}}'
+                summary: '{{fields.label}}'
+          - label: Principles grid (core commitments)
+            name: commitments
+            widget: object
+            summary: '{{fields.titleTop}} {{fields.titleOutline}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Section label
+                name: label
+                widget: string
+                required: false
+              - label: Title (solid part)
+                name: titleTop
+                widget: string
+                required: false
+              - label: Title (outlined part)
+                name: titleOutline
+                widget: string
+                required: false
+              - label: Principles
+                name: items
+                widget: list
+                required: false
+                fields:
+                  - label: Icon
+                    name: icon
+                    widget: select
+                    required: false
+                    options: *id003
+                    hint: Line icon shown on the tile/card
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Label 1
+                    name: practiceLabel
+                    widget: string
+                    required: false
+                  - label: Text 1
+                    name: practice
+                    widget: text
+                    required: false
+                  - label: Label 2
+                    name: outcomeLabel
+                    widget: string
+                    required: false
+                  - label: Big statement
+                    name: outcome
+                    widget: text
+                    required: false
+                summary: '{{fields.title}}'
+              - label: Closing text
+                name: closing
+                widget: text
+                required: false
+              - label: Button small label
+                name: ctaSub
+                widget: string
+                required: false
+              - label: Button big label
+                name: ctaLabel
+                widget: string
+                required: false
+              - label: Button URL (blank = contact)
+                name: ctaUrl
+                widget: string
+                required: false
+          - label: ✚ Text / Story (rich text)
+            name: text
+            widget: object
+            summary: '{{fields.titleTop}} {{fields.titleOutline}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Section label
+                name: label
+                widget: string
+                required: false
+              - label: Title (solid part)
+                name: titleTop
+                widget: string
+                required: false
+              - label: Title (outlined part)
+                name: titleOutline
+                widget: string
+                required: false
+              - label: Body
+                name: body
+                widget: markdown
+                required: false
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                  - heading-two
+                  - heading-three
+                  - quote
+                  - bulleted-list
+                  - numbered-list
+              - label: Background
+                name: theme
+                widget: select
+                required: false
+                options:
+                  - label: Dark
+                    value: dark
+                  - label: Light (white)
+                    value: light
+                default: dark
+          - label: ✚ Image + Text
+            name: imageText
+            widget: object
+            summary: '{{fields.title}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Section label
+                name: label
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+                required: false
+              - label: Body
+                name: body
+                widget: markdown
+                required: false
+              - label: Image
+                name: image
+                widget: image
+                required: false
+                choose_url: true
+              - label: Image description
+                name: imageAlt
+                widget: string
+                required: false
+              - label: Image side
+                name: imageSide
+                widget: select
+                required: false
+                options:
+                  - right
+                  - left
+                default: right
+              - label: Button label
+                name: buttonLabel
+                widget: string
+                required: false
+              - label: Button URL
+                name: buttonUrl
+                widget: string
+                required: false
+              - label: Background
+                name: theme
+                widget: select
+                required: false
+                options:
+                  - label: Dark
+                    value: dark
+                  - label: Light (white)
+                    value: light
+                default: light
+          - label: ✚ Photo gallery (with lightbox)
+            name: gallery
+            widget: object
+            summary: '{{fields.titleTop}} {{fields.titleOutline}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Section label
+                name: label
+                widget: string
+                required: false
+              - label: Title (solid part)
+                name: titleTop
+                widget: string
+                required: false
+              - label: Title (outlined part)
+                name: titleOutline
+                widget: string
+                required: false
+              - label: Photos
+                name: images
+                widget: list
+                required: false
+                fields:
+                  - label: Photo
+                    name: image
+                    widget: image
+                    choose_url: true
+                  - label: Caption
+                    name: caption
+                    widget: string
+                    required: false
+                summary: '{{fields.caption}}'
+          - label: ✚ Testimonials / quotes
+            name: quotes
+            widget: object
+            summary: '{{fields.titleTop}} {{fields.titleOutline}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Section label
+                name: label
+                widget: string
+                required: false
+              - label: Title (solid part)
+                name: titleTop
+                widget: string
+                required: false
+              - label: Title (outlined part)
+                name: titleOutline
+                widget: string
+                required: false
+              - label: Quotes
+                name: items
+                widget: list
+                required: false
+                fields:
+                  - label: Quote
+                    name: quote
+                    widget: text
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Role (e.g. Parent, Grade 7)
+                    name: role
+                    widget: string
+                    required: false
+                summary: '{{fields.name}}'
+          - label: ✚ Call to action banner
+            name: cta
+            widget: object
+            summary: '{{fields.title}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Small tag
+                name: kicker
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+              - label: Text
+                name: text
+                widget: text
+                required: false
+              - label: Button label
+                name: buttonLabel
+                widget: string
+                required: false
+              - label: Button URL
+                name: buttonUrl
+                widget: string
+                required: false
+          - label: ✚ Video (YouTube / Vimeo)
+            name: video
+            widget: object
+            summary: '{{fields.title}}'
+            fields:
+              - *id001
+              - *id002
+              - label: Section label
+                name: label
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+                required: false
+              - label: Video URL
+                name: url
+                widget: string
+                hint: Paste a normal YouTube or Vimeo link
+              - label: Caption
+                name: caption
+                widget: string
+                required: false
+        collapsed: true
+        label_singular: Section
+        add_to_top: false
+  - name: settings
+    label: Site settings
+    editor:
+      preview: false
+    files:
+      - name: settings
+        label: Global settings (menu, contact, footer, SEO, colours)
+        file: content/settings.json
+        format: json
+        fields:
+          - label: Site & SEO
+            name: site
+            widget: object
+            required: false
+            fields:
+              - label: First name
+                name: firstName
+                widget: string
+              - label: Last name
+                name: lastName
+                widget: string
+              - label: Browser / Google title
+                name: title
+                widget: string
+              - label: Google description
+                name: description
+                widget: text
+              - label: Live site URL
+                name: url
+                widget: string
+                required: false
+                hint: e.g. https://fahmidasultana.com — used for share previews
+              - label: Share preview image (1200×630)
+                name: ogImage
+                widget: image
+                required: false
+                choose_url: true
+              - label: Job title (for Google)
+                name: jobTitle
+                widget: string
+                required: false
+              - label: Current school (for Google)
+                name: worksFor
+                widget: string
+                required: false
+            collapsed: true
+          - label: Contact details
+            name: contact
+            widget: object
+            required: false
+            fields:
+              - label: Email
+                name: email
+                widget: string
+                required: false
+              - label: LinkedIn URL
+                name: linkedin
+                widget: string
+                required: false
+              - label: Phone
+                name: phone
+                widget: string
+                required: false
+            collapsed: true
+          - label: Colours & motion
+            name: theme
+            widget: object
+            required: false
+            fields:
+              - label: Accent colour
+                name: accent
+                widget: color
+                required: false
+              - label: Deep accent colour
+                name: accentDeep
+                widget: color
+                required: false
+              - label: Smooth scrolling
+                name: smoothScroll
+                widget: boolean
+                required: false
+                default: true
+            collapsed: true
+          - label: Menu links
+            name: nav
+            widget: list
+            required: false
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Link
+                name: href
+                widget: string
+                hint: 'Section: /#about · Page: /my-page/ · External: https://…'
+            summary: '{{fields.label}} → {{fields.href}}'
+          - label: Header button
+            name: headerButton
+            widget: object
+            required: false
+            fields:
+              - label: Label
+                name: label
+                widget: string
+                required: false
+              - label: Link or file
+                name: url
+                widget: string
+                required: false
+                hint: Leave blank to use your contact link. Upload a CV via Media and paste e.g. /uploads/cv.pdf
+            collapsed: true
+          - label: Footer
+            name: footer
+            widget: object
+            required: false
+            fields:
+              - label: Badge
+                name: badge
+                widget: string
+                required: false
+              - label: Small line
+                name: kicker
+                widget: string
+                required: false
+              - label: Statement
+                name: line
+                widget: text
+                required: false
+              - label: Inquiries label
+                name: inquiriesLabel
+                widget: string
+                required: false
+              - label: Big button label
+                name: buttonLabel
+                widget: string
+                required: false
+              - label: Big button link (blank = contact)
+                name: buttonUrl
+                widget: string
+                required: false
+              - label: Location
+                name: location
+                widget: string
+                required: false
+              - label: Background texture
+                name: splash
+                widget: image
+                required: false
+                choose_url: true
+            collapsed: true

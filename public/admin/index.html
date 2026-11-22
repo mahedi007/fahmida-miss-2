@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Content Manager · Fahmida Sultana</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script>window.CMS_MANUAL_INIT = true;</script>
+</head>
+<body>
+  <!-- Decap CMS (git-based, free). Pinned major version for stability. -->
+  <script src="https://unpkg.com/decap-cms@^3.18.0/dist/decap-cms.js"></script>
+  <script>
+    // config.yml is loaded automatically and merged with the values below.
+    // base_url = this site's own domain, so the GitHub login function (/api/auth) works on any domain.
+    CMS.init({
+      config: {
+        backend: { base_url: window.location.origin },
+        site_url: window.location.origin,
+        display_url: window.location.origin,
+        logo_url: "/favicon.svg"
+      }
+    });
+  </script>
+</body>
+</html>
