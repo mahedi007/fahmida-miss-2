@@ -13,7 +13,7 @@ export function VelocityMarquee({ children, baseVelocity = -2, className = "" }:
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const velocity = useSpring(useVelocity(scrollY), { damping: 50, stiffness: 400 });
-  const factor = useTransform(velocity, [0, 1000], [0, 4], { clamp: false });
+  const factor = useTransform(velocity, [0, 1000], [0, 1.5], { clamp: false });
   const x = useTransform(baseX, (v) => `${wrap(-25, 0, v)}%`);
   const dir = useRef(1);
   const hovering = useRef(false);
