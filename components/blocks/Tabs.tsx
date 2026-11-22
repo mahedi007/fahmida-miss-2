@@ -57,7 +57,7 @@ export function Tabs({ b }: { b: TabsBlock }) {
                 {(t.tiles || []).map((tile, k) => (
                   <motion.div key={k} variants={{ h: { opacity: 0, scale: 0.94 }, s: { opacity: 1, scale: 1, transition: { duration: 0.35 } } }}
                     className="relative h-20 sm:h-24 md:h-32 border-[2px] md:border-[3px] border-black overflow-hidden group cursor-crosshair bg-white">
-                    <Icon name={tile.icon} strokeWidth={1.4} className="absolute right-[8%] top-1/2 -translate-y-1/2 w-[38%] h-[70%] text-black opacity-20 transition-all duration-500 group-hover:opacity-95 group-hover:text-accent group-hover:scale-110 group-hover:-rotate-[4deg] group-hover:z-20" />
+                    <span className="absolute inset-0 z-0 bg-white/40 group-hover:bg-black/90 transition-colors duration-300" /><Icon name={tile.icon} strokeWidth={1.4} className="absolute right-[8%] top-1/2 -translate-y-1/2 w-[38%] h-[70%] text-black opacity-20 transition-all duration-500 group-hover:opacity-60 group-hover:text-accent group-hover:scale-110 group-hover:-rotate-[4deg] z-10" />
                     <span className="absolute inset-0 flex items-end p-2 md:p-4 z-10 bg-white/40 group-hover:bg-black/90 transition-colors duration-300 text-[1.05rem] md:max-dt:text-[1.3rem] md:text-3xl tracking-tight leading-[1.1] group-hover:text-white">{tile.label}</span>
                     <span className="absolute top-0 left-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-300 z-20" />
                   </motion.div>
