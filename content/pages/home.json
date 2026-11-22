@@ -1,0 +1,170 @@
+{
+  "title": "Home",
+  "seoTitle": "",
+  "seoDescription": "",
+  "sections": [
+    {
+      "type": "hero",
+      "anchor": "top-hero",
+      "hidden": false,
+      "firstName": "FAHMIDA",
+      "lastName": "SULTANA",
+      "tag": "Educator & Student Counselor",
+      "lead": "17+ years shaping confident, curious learners in reputed Dhaka schools — through student-centred teaching, one-to-one counselling and Cambridge-standard classroom practice.",
+      "chips": ["17+ Years Teaching", "Cambridge CICTL", "Microsoft Educator Expert", "CAIE Invigilator"],
+      "location": "Based in Dhaka, Bangladesh",
+      "portrait": "/uploads/fahmida-portrait.webp",
+      "portraitAlt": "Portrait of Fahmida Sultana",
+      "splash": "/uploads/ink-splash.webp",
+      "colorReveal": true,
+      "revealHint": "Hover // Reveal colour",
+      "exploreLabel": "Explore Journey",
+      "exploreHref": "#about"
+    },
+    {
+      "type": "marquee",
+      "hidden": false,
+      "items": ["Student-Centred Learning", "Student Counselling", "Cambridge CICTL", "CAIE O & A Level", "Pastoral Care", "Microsoft Educator Expert", "17+ Years"],
+      "secondary": ["Listen", "Guide", "Inspire", "Assess", "Reflect", "Grow"]
+    },
+    {
+      "type": "about",
+      "anchor": "about",
+      "hidden": false,
+      "titleTop": "About",
+      "titleOutline": "Me",
+      "subline": "Teaching · Counselling · Cambridge Pathways",
+      "statementLead": "Helping every learner",
+      "statementHighlight": "LISTEN, GROW, BELONG.",
+      "columns": [
+        { "number": "01", "title": "Teaching", "tag": "Classroom", "body": "Leading a class at **Glenrich International School, Satarkul** — planning engaging, student-centred lessons aligned with curriculum objectives and keeping the room organised, positive and inclusive." },
+        { "number": "02", "title": "Counselling", "tag": "Pastoral", "body": "Supporting students' **academic, social and emotional development** through counselling, individual guidance and close collaboration with colleagues and parents." },
+        { "number": "03", "title": "Assessment", "tag": "CAIE", "body": "Monitoring progress with **constructive feedback**, and invigilating **Cambridge O Level & A Level** examinations to Cambridge regulations and standards." },
+        { "number": "04", "title": "Growth", "tag": "Lifelong", "body": "Still learning — **Microsoft Elevate Educator Expert**, Cambridge professional development, and an ongoing **Adolescent Counselling** course." }
+      ],
+      "status": "Currently teaching // Glenrich Satarkul, Dhaka"
+    },
+    {
+      "type": "cards",
+      "anchor": "journey",
+      "hidden": false,
+      "titleTop": "Teaching",
+      "titleOutline": "Journey",
+      "items": [
+        { "name": "Glenrich", "duration": "2 yrs 6 mos", "meta": "Campus // Satarkul", "badge": "Now", "live": true, "from": "2024", "to": "NOW", "role": "Class Teacher", "image": "", "link": "", "description": "Glenrich International School, Satarkul — student-centred lessons, counselling & pastoral support, and CAIE O/A Level invigilation.", "tags": ["Class Teacher", "Counselling", "CAIE", "Cambridge"] },
+        { "name": "HURDCO", "duration": "9 yrs 2 mos", "meta": "Campus // Dhaka", "badge": "9+ Yrs", "live": false, "from": "2014", "to": "2023", "role": "Class Teacher", "image": "", "link": "", "description": "HURDCO International School — nine years of classroom instruction and student counselling; completed the Cambridge CICTL here.", "tags": ["Class Teacher", "Instruction", "Counselling", "CICTL"] },
+        { "name": "Prime Bank", "duration": "1 yr 9 mos", "meta": "Campus // Dhaka", "badge": "Middle Yrs", "live": false, "from": "2014", "to": "2016", "role": "Middle School Teacher", "image": "", "link": "", "description": "Prime Bank Grammar School — teaching middle-school learners through the years where habits and confidence take shape.", "tags": ["Middle School", "Teaching", "Grammar School"] },
+        { "name": "Scholastica", "duration": "1 yr", "meta": "Campus // Dhaka", "badge": "Origin", "live": false, "from": "2009", "to": "START", "role": "Class Teacher", "image": "", "link": "", "description": "Scholastica — where the journey began: classroom management and student counselling from day one.", "tags": ["Class Teacher", "Classroom Mgmt", "Counselling"] }
+      ],
+      "footnote": "Access_Class_Register // V.17"
+    },
+    {
+      "type": "tabs",
+      "anchor": "toolkit",
+      "hidden": false,
+      "titleTop": "Teaching",
+      "titleOutline": "Toolkit",
+      "tabs": [
+        {
+          "label": "Classroom", "sub": "Pedagogy // Practice", "registry": "Teaching Registry // 01",
+          "heading": "Turning curriculum objectives into lessons every learner can step into.",
+          "note": "Shaped by the **Cambridge CICTL** and learner-attributes training.",
+          "tiles": [
+            { "label": "Lesson Planning", "icon": "book" },
+            { "label": "Classroom Mgmt", "icon": "grid" },
+            { "label": "Student-Centred", "icon": "target" },
+            { "label": "Inclusive Rooms", "icon": "users" },
+            { "label": "Diverse Resources", "icon": "layers" },
+            { "label": "Digital Classroom", "icon": "monitor" }
+          ]
+        },
+        {
+          "label": "Counselling", "sub": "Pastoral // Wellbeing", "registry": "Teaching Registry // 02",
+          "heading": "Seeing the whole child — academic, social and personal.",
+          "note": "Backed by **Interpersonal Skills – Advanced** and ongoing adolescent counselling study.",
+          "tiles": [
+            { "label": "Student Counselling", "icon": "message" },
+            { "label": "Academic Advising", "icon": "compass" },
+            { "label": "Adolescent Support", "icon": "sprout" },
+            { "label": "Pastoral Care", "icon": "heart" },
+            { "label": "Parent Partnership", "icon": "home" },
+            { "label": "Interpersonal Skills", "icon": "link" }
+          ]
+        },
+        {
+          "label": "Assessment", "sub": "Cambridge // Standards", "registry": "Teaching Registry // 03",
+          "heading": "Measuring progress honestly — and turning it into feedback that moves learners forward.",
+          "note": "Including **CAIE O & A Level** examination invigilation.",
+          "tiles": [
+            { "label": "Assessment", "icon": "clipboard" },
+            { "label": "Constructive Feedback", "icon": "pen" },
+            { "label": "CAIE Invigilation", "icon": "eye" },
+            { "label": "Exam Integrity", "icon": "shield" },
+            { "label": "Progress Tracking", "icon": "chart" },
+            { "label": "Reflective Practice", "icon": "refresh" }
+          ]
+        }
+      ],
+      "signature": "Classroom // 2026 // Fahmida Sultana"
+    },
+    {
+      "type": "feature",
+      "anchor": "milestone",
+      "hidden": false,
+      "label": "Featured_Milestone // Recognition",
+      "tag": "Microsoft_Elevate",
+      "title": "Microsoft Elevate Educator Expert 2026–2027",
+      "description": "A verified recognition for bringing digital and AI skills into everyday teaching — made possible by a school that gives educators the space to learn, flourish and bloom.",
+      "ctaLabel": "View_Verified_Credential",
+      "ctaUrl": "",
+      "stats": [
+        { "label": "Years_Teaching", "value": 17, "suffix": "+", "icon": "calendar" },
+        { "label": "Schools_Served", "value": 4, "suffix": "", "icon": "cap" }
+      ]
+    },
+    {
+      "type": "ledger",
+      "anchor": "credentials",
+      "hidden": false,
+      "label": "Learning_Log // Certifications // Education",
+      "titleTop": "Learning",
+      "titleOutline": "Ledger",
+      "groups": [
+        {
+          "label": "Certifications & Professional Development",
+          "rows": [
+            { "code": "LOG_01", "title": "Microsoft Elevate Educator Expert 2026–2027", "meta": "Microsoft Elevate · Issued Sep 2026 · Expires Sep 2027", "status": "Verified", "style": "live", "url": "" },
+            { "code": "LOG_02", "title": "Cambridge Learner Attributes in Classroom Practice", "meta": "Cambridge Professional Development Course · Dhaka · 9–10 May 2026", "status": "Completed", "style": "default", "url": "" },
+            { "code": "LOG_03", "title": "Interpersonal Skills – Advanced", "meta": "STS Academy · In-class & online learning", "status": "Completed", "style": "default", "url": "" },
+            { "code": "LOG_04", "title": "Adolescent Counselling Course", "meta": "Udemy · Adolescent development, communication & emotional well-being · Since Jul 2022", "status": "In Progress", "style": "progress", "url": "" },
+            { "code": "LOG_05", "title": "Cambridge International Certificate in Teaching & Learning (CICTL)", "meta": "Cambridge · via S.P.E.E.D. · 2016 · Learner-centred teaching, lesson planning, assessment, reflective practice", "status": "Certified", "style": "default", "url": "" }
+          ]
+        },
+        {
+          "label": "Education",
+          "rows": [
+            { "code": "EDU_01", "title": "Bachelor of Business Administration", "meta": "Eden Mohila College · Business Administration & Management · 1996 – 1999", "status": "1st Division", "style": "default", "url": "" },
+            { "code": "EDU_02", "title": "Higher Secondary — Business Studies", "meta": "Viqarunnisa Noon School and College · Business, Management & Marketing", "status": "Completed", "style": "default", "url": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "commitments",
+      "anchor": "philosophy",
+      "hidden": false,
+      "label": "Classroom // Teaching_Standards // 2026",
+      "titleTop": "Core",
+      "titleOutline": "Commitments",
+      "items": [
+        { "icon": "bulb", "title": "Student-Centred Learning", "practiceLabel": "In_Practice", "practice": "Lessons are planned around how each learner thinks — not only what the syllabus says — guided by Cambridge learner attributes.", "outcomeLabel": "For_Students", "outcome": "Confident, reflective learners who take ownership of their own progress." },
+        { "icon": "heart", "title": "Pastoral Care", "practiceLabel": "In_Practice", "practice": "Every concern is heard. Counselling and one-to-one guidance sit alongside the timetable, never after it.", "outcomeLabel": "For_Students", "outcome": "A classroom where every child feels seen, safe and supported to grow." },
+        { "icon": "shield", "title": "Academic Integrity", "practiceLabel": "In_Practice", "practice": "Assessment follows the standard — from daily feedback to Cambridge O & A Level examination procedures.", "outcomeLabel": "For_Students", "outcome": "Results that are fair, earned and trusted by parents and schools alike." }
+      ],
+      "closing": "These commitments shape every lesson, every conversation and every examination hall I step into — with professionalism, care and integrity.",
+      "ctaSub": "Start_A_Conversation",
+      "ctaLabel": "Connect",
+      "ctaUrl": ""
+    }
+  ]
+}

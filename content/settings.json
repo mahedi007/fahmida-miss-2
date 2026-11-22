@@ -1,0 +1,43 @@
+{
+  "site": {
+    "firstName": "FAHMIDA",
+    "lastName": "SULTANA",
+    "title": "Fahmida Sultana | Educator & Student Counselor | Dhaka, Bangladesh",
+    "description": "Fahmida Sultana — educator and student counselor with 17+ years in reputed Dhaka schools. Class Teacher at Glenrich International School, Satarkul, Cambridge CICTL certified, CAIE invigilator and Microsoft Elevate Educator Expert 2026–2027.",
+    "url": "",
+    "ogImage": "/uploads/og-image.jpg",
+    "jobTitle": "Class Teacher & Student Counselor",
+    "worksFor": "Glenrich International School, Satarkul"
+  },
+  "contact": {
+    "email": "",
+    "linkedin": "",
+    "phone": ""
+  },
+  "theme": {
+    "accent": "#dc2626",
+    "accentDeep": "#7f1d1d",
+    "smoothScroll": true
+  },
+  "nav": [
+    { "label": "About", "href": "/#about" },
+    { "label": "Journey", "href": "/#journey" },
+    { "label": "Toolkit", "href": "/#toolkit" },
+    { "label": "Credentials", "href": "/#credentials" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "headerButton": {
+    "label": "Say Hello",
+    "url": ""
+  },
+  "footer": {
+    "badge": "Contact // Collaboration",
+    "kicker": "Teaching · Counselling · Cambridge Pathways",
+    "line": "Helping every learner grow — academically, socially and personally.",
+    "inquiriesLabel": "Inquiries",
+    "buttonLabel": "Say Hello",
+    "buttonUrl": "",
+    "location": "Dhaka // Bangladesh",
+    "splash": "/uploads/ink-splash.webp"
+  }
+}
