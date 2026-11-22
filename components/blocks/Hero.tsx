@@ -25,9 +25,9 @@ export function Hero({ b }: { b: HeroBlock }) {
       className="relative min-h-[83vh] md:max-dt:min-h-[88vh] flex flex-col justify-start dt:justify-center overflow-hidden bg-white text-black border-[7px] border-black m-2">
       <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none dots" />
 
-      <motion.div style={{ y: titleY }} className="relative z-20 w-full px-8 pt-12 md:px-12 dt:px-24 dt:pt-0 pointer-events-none">
+      <motion.div style={{ y: titleY }} className="relative z-20 w-full px-8 pt-12 md:px-12 dt:px-24 dt:py-16 pointer-events-none">
         <div className="max-w-5xl space-y-8">
-          <h1 className="text-[clamp(3rem,16.5vw,4.4rem)] md:text-[clamp(6rem,10.4vw,11rem)] leading-[0.82] tracking-tighter italic font-semibold">
+          <h1 className="text-[clamp(3rem,16.5vw,4.4rem)] md:text-[clamp(4.5rem,min(10.4vw,17vh),11rem)] leading-[0.82] tracking-tighter italic font-semibold">
             <SplitText mode="mount" delay={0.15} stagger={0.04} lines={[{ text: b.firstName }, { text: b.lastName }]} />
           </h1>
 
