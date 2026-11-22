@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* ---- Design tokens (accent colours come from CMS settings via inline CSS vars) ---- */
+:root {
+  --background: #0f0f0f;
+  --foreground: #ededed;
+  --accent: #dc2626;
+  --accent-deep: #7f1d1d;
+  --header-h: 72px;
+}
+
+@theme {
+  --breakpoint-dt: 68.8125rem; /* 1101px: desktop hero layout */
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "cv11", "ss01";
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-weight: 600; }
+  ::selection { background: #000; color: #fff; }
+  [id] { scroll-margin-top: calc(var(--header-h) + 12px); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+}
+
+/* ---- Lenis smooth scroll ---- */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ---- Reusable textures ---- */
+@utility dots { background-image: radial-gradient(#000 1.5px, transparent 0); background-size: 6px 6px; }
+@utility dots-8 { background-image: radial-gradient(#000 1.5px, transparent 0); background-size: 8px 8px; }
+@utility dots-light { background-image: radial-gradient(#fff 1.5px, transparent 0); background-size: 8px 8px; }
+@utility dots-10 { background-image: radial-gradient(#000 2px, transparent 0); background-size: 10px 10px; }
+@utility stripes { background: repeating-linear-gradient(45deg, transparent, transparent 5px, #fff 5px, #fff 10px); }
+
+/* Prose for rich text blocks */
+.prose-brutal p { margin-bottom: 1.1em; }
+.prose-brutal h2, .prose-brutal h3 { font-style: italic; text-transform: uppercase; letter-spacing: -.04em; line-height: 1; margin: 1.4em 0 .6em; }
+.prose-brutal h2 { font-size: 2.25rem; }
+.prose-brutal h3 { font-size: 1.6rem; }
+.prose-brutal ul { list-style: none; padding: 0; margin-bottom: 1.1em; }
+.prose-brutal ul li { position: relative; padding-left: 1.5rem; margin-bottom: .4em; }
+.prose-brutal ul li::before { content: ""; position: absolute; left: 0; top: .6em; width: .7rem; height: 3px; background: var(--accent); transform: skewX(-20deg); }
+.prose-brutal ol { padding-left: 1.4rem; list-style: decimal; margin-bottom: 1.1em; }
+.prose-brutal strong { font-weight: 900; font-style: italic; }
+.prose-brutal a { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--accent); }
+.prose-brutal blockquote { border-left: 6px solid currentColor; padding-left: 1.25rem; font-style: italic; font-weight: 600; font-size: 1.3em; margin: 1.2em 0; }
+.prose-brutal img { border: 4px solid currentColor; margin: 1.5em 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
