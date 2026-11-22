@@ -2,7 +2,7 @@
 # 1) Set backend.repo to your GitHub repo  2) See README for the GitHub login setup
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+  repo: mahedi007/fahmida-miss-2
   branch: main
   auth_endpoint: api/auth
   commit_messages:
