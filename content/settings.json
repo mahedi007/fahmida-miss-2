@@ -10,8 +10,8 @@
     "worksFor": "Glenrich International School, Satarkul"
   },
   "contact": {
-    "email": "",
-    "linkedin": "",
+    "email": "munnibd2008@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/fahmida-sultana-3541b7104/",
     "phone": ""
   },
   "theme": {
@@ -20,11 +20,26 @@
     "smoothScroll": true
   },
   "nav": [
-    { "label": "About", "href": "/#about" },
-    { "label": "Journey", "href": "/#journey" },
-    { "label": "Toolkit", "href": "/#toolkit" },
-    { "label": "Credentials", "href": "/#credentials" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "About",
+      "href": "/#about"
+    },
+    {
+      "label": "Journey",
+      "href": "/#journey"
+    },
+    {
+      "label": "Toolkit",
+      "href": "/#toolkit"
+    },
+    {
+      "label": "Credentials",
+      "href": "/#credentials"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
   ],
   "headerButton": {
     "label": "Say Hello",
